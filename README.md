@@ -18,11 +18,8 @@ Landing page statique prête à déployer sur GitHub Pages, Railway, Netlify, Ve
 
 ## Source de données
 
-Le front charge `komed3/rtb-api` (MIT), un projet public qui compile des données basées sur Forbes Real-Time Billionaires.
-
 Endpoint utilisé :
 
-`https://raw.githubusercontent.com/komed3/rtb-api/main/api/list/rtb/latest`
 
 Les données sont des estimations et peuvent être décalées par rapport au classement Forbes en temps réel. Le site affiche la date de la dernière donnée reçue.
 
