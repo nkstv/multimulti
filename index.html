@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Multimilliardaire.com — Classement des plus grandes fortunes du monde</title>
+  <meta name="description" content="Classement des multimilliardaires du monde : fortune estimée, rang, business, secteur, pays et évolution. Données mises à jour depuis une source publique basée sur Forbes Real-Time Billionaires." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://multimilliardaire.com/" />
+  <meta name="theme-color" content="#090b0a" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Multimilliardaire.com — Qui sont les plus riches du monde ?" />
+  <meta property="og:description" content="Explore le classement mondial des multimilliardaires : fortune, rang, business, pays et secteur." />
+  <meta property="og:url" content="https://multimilliardaire.com/" />
+  <meta property="og:image" content="https://multimilliardaire.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Multimilliardaire.com — Classement mondial" />
+  <meta name="twitter:description" content="Fortune, rang, business et pays des plus grandes fortunes mondiales." />
+  <meta name="twitter:image" content="https://multimilliardaire.com/og-image.png" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Multimilliardaire.com",
+    "url":"https://multimilliardaire.com/",
+    "description":"Classement des plus grandes fortunes mondiales : rang, fortune, business, secteur et pays.",
+    "inLanguage":"fr-FR"
+  }
+  </script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Multimilliardaire.com — Accueil">
+      <span class="brand-mark">M</span>
+      <span>multimilliardaire<span class="brand-dot">.com</span></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navigation principale">
+      <a href="#classement">Classement</a>
+      <a href="#methodologie">Méthodologie</a>
+    </nav>
+    <a class="header-cta" href="#classement">Voir le classement <span>↓</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-kicker"><span class="pulse"></span> Classement mondial des fortunes</div>
+      <h1>Qui sont les<br><span>multimilliardaires</span><br>du monde ?</h1>
+      <p class="hero-copy">Fortune estimée, rang mondial, business principal, secteur et pays. Un classement simple à explorer, sans blabla.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#classement">Explorer le classement</a>
+        <a class="button ghost" href="#methodologie">Comment ça marche ?</a>
+      </div>
+      <p class="definition">Sur ce site, un <strong>multimilliardaire</strong> désigne une personne dont la fortune estimée est d'au moins <strong>2 milliards de dollars</strong>.</p>
+
+      <div class="hero-orbit" aria-hidden="true">
+        <div class="orbit-line orbit-1"></div>
+        <div class="orbit-line orbit-2"></div>
+        <div class="money-card mc-1"><small>RANG #1</small><strong id="heroTopName">Elon Musk</strong><span id="heroTopWorth">≈ 892 Md$</span></div>
+        <div class="money-card mc-2"><small>BUSINESS</small><strong>Technologie</strong><span>Tesla · SpaceX · Google · Meta…</span></div>
+        <div class="money-card mc-3"><small>DONNÉES</small><strong id="heroCount">3 000+</strong><span>fortunes suivies</span></div>
+      </div>
+    </section>
+
+    <section class="stats-wrap" aria-label="Statistiques du classement">
+      <div class="stats-grid">
+        <article><span>Multimilliardaires affichés</span><strong id="statCount">—</strong><small>fortune ≥ 2 Md$</small></article>
+        <article><span>Fortune cumulée</span><strong id="statTotal">—</strong><small>estimation en dollars</small></article>
+        <article><span>Pays représentés</span><strong id="statCountries">—</strong><small>dans le filtre actuel</small></article>
+        <article><span>Dernière donnée</span><strong id="statDate">—</strong><small>source de classement</small></article>
+      </div>
+    </section>
+
+    <section class="ranking" id="classement">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">LE CLASSEMENT</span>
+          <h2>Les plus grandes fortunes mondiales</h2>
+        </div>
+        <p>Recherche une personne, filtre par pays ou secteur, et modifie le seuil de fortune.</p>
+      </div>
+
+      <div class="toolbar" role="search">
+        <label class="search-field">
+          <span class="sr-only">Rechercher une personne ou un business</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+          <input id="searchInput" type="search" autocomplete="off" placeholder="Rechercher Elon Musk, LVMH, Google…" />
+        </label>
+        <label><span class="sr-only">Pays</span><select id="countryFilter"><option value="all">Tous les pays</option></select></label>
+        <label><span class="sr-only">Secteur</span><select id="industryFilter"><option value="all">Tous les secteurs</option></select></label>
+        <label><span class="sr-only">Fortune minimale</span><select id="worthFilter">
+          <option value="2" selected>≥ 2 Md$</option>
+          <option value="1">≥ 1 Md$</option>
+          <option value="5">≥ 5 Md$</option>
+          <option value="10">≥ 10 Md$</option>
+          <option value="50">≥ 50 Md$</option>
+          <option value="100">≥ 100 Md$</option>
+        </select></label>
+      </div>
+
+      <div class="ranking-meta">
+        <span id="resultCount">Chargement du classement…</span>
+        <span id="dataStatus" class="status"><i></i> Connexion à la source…</span>
+      </div>
+
+      <div class="table-shell">
+        <div class="table-head" aria-hidden="true">
+          <span>Rang</span><span>Personne</span><span>Fortune</span><span>Business / source</span><span>Pays</span><span>Variation</span>
+        </div>
+        <div id="rankingRows" class="ranking-rows" aria-live="polite">
+          <div class="loading-row"><div class="spinner"></div><span>Chargement des fortunes…</span></div>
+        </div>
+      </div>
+
+      <div class="pagination" id="pagination" aria-label="Pagination"></div>
+    </section>
+
+    <section class="method" id="methodologie">
+      <div class="method-card">
+        <span class="eyebrow">MÉTHODOLOGIE</span>
+        <h2>Une fortune n'est jamais un solde bancaire.</h2>
+        <p>Les montants sont des <strong>estimations</strong> basées notamment sur la valeur des participations dans des entreprises cotées ou privées. Elles peuvent varier fortement avec les marchés, les valorisations et les taux de change.</p>
+        <div class="method-points">
+          <div><b>01</b><span><strong>Classement</strong> trié par fortune estimée décroissante.</span></div>
+          <div><b>02</b><span><strong>Business</strong> correspond aux principales sources de fortune disponibles.</span></div>
+          <div><b>03</b><span><strong>Mise à jour</strong> via une API publique qui compile des données basées sur Forbes Real-Time Billionaires.</span></div>
+        </div>
+      </div>
+      <aside class="source-card">
+        <span>Sources & transparence</span>
+        <h3>D'où viennent les chiffres ?</h3>
+        <p>Le site charge les données de <strong>RTB API</strong>, un projet open source sous licence MIT qui compile les informations du classement Forbes Real-Time Billionaires.</p>
+        <a href="https://github.com/komed3/rtb-api" target="_blank" rel="noopener noreferrer">Voir la source de données ↗</a>
+        <small>Multimilliardaire.com est indépendant et n'est ni affilié, ni approuvé par Forbes.</small>
+      </aside>
+    </section>
+
+    <section class="seo-copy">
+      <h2>Qu'est-ce qu'un multimilliardaire ?</h2>
+      <p>Un multimilliardaire est une personne dont le patrimoine net est estimé à plusieurs milliards. Le classement ci-dessus permet de comparer les plus grandes fortunes du monde selon leur rang, leurs entreprises ou sources de richesse, leur secteur d'activité et leur pays.</p>
+      <p>Les fortunes des entrepreneurs de la technologie, de la finance, du luxe, de la distribution, de l'énergie ou encore de l'immobilier évoluent en permanence. Les chiffres affichés doivent donc être lus comme des estimations à une date donnée.</p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="/"><span class="brand-mark">M</span><span>multimilliardaire<span class="brand-dot">.com</span></span></a>
+    <p>Le classement des plus grandes fortunes mondiales.</p>
+    <div><a href="#classement">Classement</a><a href="#methodologie">Méthodologie</a><a href="https://github.com/komed3/rtb-api" target="_blank" rel="noopener noreferrer">Données</a></div>
+    <small>© <span id="year"></span> Multimilliardaire.com · Les fortunes affichées sont des estimations.</small>
+  </footer>
+
+  <script src="/script.js" defer></script>
+</body>
+</html>

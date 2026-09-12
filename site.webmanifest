@@ -1,0 +1,9 @@
+{
+  "name": "Multimilliardaire.com",
+  "short_name": "Multimilliardaire",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090b0a",
+  "theme_color": "#090b0a",
+  "icons": []
+}
