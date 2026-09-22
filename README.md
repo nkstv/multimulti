@@ -30,3 +30,13 @@ Commit tous les fichiers à la racine du repo. Il n'y a aucune étape de build e
 Pour GitHub Pages : Settings > Pages > Deploy from a branch > `main` / root.
 
 Pour Railway / autre serveur statique : servir simplement le dossier racine.
+
+
+## Guides SEO des montants
+
+- /1-million-euros/
+- /10-millions-euros/
+- /100-millions-euros/
+- /1-milliard-euros/
+- /10-milliards-euros/
+- /100-milliards-euros/
