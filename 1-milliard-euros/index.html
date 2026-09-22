@@ -26,13 +26,81 @@
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/guide.css" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Que représente 1 milliard d’euros ?","description":"Que représente 1 milliard d’euros ? Comparaisons concrètes, rendement théorique à 5 %, dépenses, immobilier et équivalent en millions ou milliards.","datePublished":"2026-09-22","dateModified":"2026-09-22","inLanguage":"fr-FR","mainEntityOfPage":"https://multimilliardaire.com/1-milliard-euros/","publisher":{"@type":"Organization","name":"Multimilliardaire.com","url":"https://multimilliardaire.com/"},"image":"https://multimilliardaire.com/og-image.png"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://multimilliardaire.com/"},{"@type":"ListItem","position":2,"name":"1 milliard d’euros","item":"https://multimilliardaire.com/1-milliard-euros/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Que représente 1 milliard d’euros ?","acceptedAnswer":{"@type":"Answer","text":"1 milliard d’euros correspond à 1 000 millions. 1 Md€ est exactement le seuil d’un milliard, soit 1 000 millions."}},{"@type":"Question","name":"Combien rapporte 1 milliard d’euros à 5 % par an ?","acceptedAnswer":{"@type":"Answer","text":"À titre purement mathématique, 5 % de 1 milliard d’euros représente 50 M€ par an, soit environ 4,17 M€ par mois avant impôts, frais, inflation et variations de valeur."}},{"@type":"Question","name":"Combien de temps faut-il pour dépenser 1 milliard d’euros à 1 000 € par jour ?","acceptedAnswer":{"@type":"Answer","text":"Sans rendement et en dépensant exactement 1 000 € par jour, il faudrait 1 000 000 jours, soit environ 2 737,9 ans."}},{"@type":"Question","name":"Combien de maisons à 500 000 € peut-on acheter avec 1 milliard d’euros ?","acceptedAnswer":{"@type":"Answer","text":"Mathématiquement, 1 milliard d’euros équivaut au prix de 2 000 maisons à 500 000 €, sans tenir compte des frais, taxes ou autres coûts."}},{"@type":"Question","name":"1 milliard d’euros correspondent à combien de millions ?","acceptedAnswer":{"@type":"Answer","text":"1 milliard d’euros correspondent à 1 000 millions."}}]}]}</script>
+  <script src="/navigation.js" defer></script>
 </head>
 <body class="article-page amount-page">
   <div class="noise" aria-hidden="true"></div>
-  <header class="site-header">
-    <a class="brand" href="/" aria-label="Multimilliardaire.com — Accueil"><span class="brand-mark">M</span><span>multimilliardaire<span class="brand-dot">.com</span></span></a>
-    <nav class="desktop-nav" aria-label="Navigation principale"><a href="/#classement">Classement</a><a href="/difference-millionnaire-milliardaire/">Millionnaire vs milliardaire</a></nav>
-    <a class="header-cta" href="/#classement">Voir le classement <span>↗</span></a>
+  <header class="site-header" data-site-header>
+    <a class="brand" href="/" aria-label="Multimilliardaire.com — Accueil">
+      <span class="brand-mark">M</span>
+      <span>multimilliardaire<span class="brand-dot">.com</span></span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navigation principale">
+      <a class="nav-link" href="/#classement">Classement</a>
+
+      <details class="nav-dropdown">
+        <summary class="nav-link">Comprendre <span class="nav-chevron" aria-hidden="true">⌄</span></summary>
+        <div class="nav-dropdown-menu nav-dropdown-menu-compact">
+          <span class="nav-menu-label">Comprendre la richesse</span>
+          <a href="/difference-millionnaire-milliardaire/">
+            <strong>Millionnaire vs milliardaire</strong>
+            <small>La différence expliquée simplement</small>
+          </a>
+          <a href="/#methodologie">
+            <strong>Méthodologie</strong>
+            <small>Comment lire les fortunes du classement</small>
+          </a>
+        </div>
+      </details>
+
+      <details class="nav-dropdown nav-dropdown-wide">
+        <summary class="nav-link">Montants <span class="nav-chevron" aria-hidden="true">⌄</span></summary>
+        <div class="nav-dropdown-menu amounts-menu">
+          <span class="nav-menu-label">Mettre les grandes sommes à l’échelle</span>
+          <div class="amounts-menu-grid">
+            <a href="/1-million-euros/"><span>1 M€</span><small>1 million d’euros</small></a>
+            <a href="/10-millions-euros/"><span>10 M€</span><small>10 millions d’euros</small></a>
+            <a href="/100-millions-euros/"><span>100 M€</span><small>100 millions d’euros</small></a>
+            <a href="/1-milliard-euros/"><span>1 Md€</span><small>1 milliard d’euros</small></a>
+            <a href="/10-milliards-euros/"><span>10 Md€</span><small>10 milliards d’euros</small></a>
+            <a href="/100-milliards-euros/"><span>100 Md€</span><small>100 milliards d’euros</small></a>
+          </div>
+        </div>
+      </details>
+    </nav>
+
+    <a class="header-cta" href="https://ecomstrike.com/" target="_blank" rel="noopener noreferrer">Se lancer dans le business <span>↗</span></a>
+
+    <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">
+      <span></span><span></span>
+    </button>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <nav aria-label="Navigation mobile">
+        <a class="mobile-menu-primary" href="/#classement"><span>Classement</span><b>↗</b></a>
+
+        <div class="mobile-menu-section">
+          <span class="mobile-menu-label">Comprendre</span>
+          <a href="/difference-millionnaire-milliardaire/">Millionnaire vs milliardaire <b>↗</b></a>
+          <a href="/#methodologie">Méthodologie <b>↗</b></a>
+        </div>
+
+        <div class="mobile-menu-section">
+          <span class="mobile-menu-label">Montants</span>
+          <div class="mobile-amount-grid">
+            <a href="/1-million-euros/">1 M€</a>
+            <a href="/10-millions-euros/">10 M€</a>
+            <a href="/100-millions-euros/">100 M€</a>
+            <a href="/1-milliard-euros/">1 Md€</a>
+            <a href="/10-milliards-euros/">10 Md€</a>
+            <a href="/100-milliards-euros/">100 Md€</a>
+          </div>
+        </div>
+
+        <a class="mobile-business-cta" href="https://ecomstrike.com/" target="_blank" rel="noopener noreferrer">Se lancer dans le business <span>↗</span></a>
+      </nav>
+    </div>
   </header>
 
   <main class="guide-main">

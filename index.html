@@ -31,19 +31,81 @@
     "inLanguage":"fr-FR"
   }
   </script>
+  <script src="/navigation.js" defer></script>
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
-  <header class="site-header">
+  <header class="site-header" data-site-header>
     <a class="brand" href="/" aria-label="Multimilliardaire.com — Accueil">
       <span class="brand-mark">M</span>
       <span>multimilliardaire<span class="brand-dot">.com</span></span>
     </a>
+
     <nav class="desktop-nav" aria-label="Navigation principale">
-      <a href="#classement">Classement</a>
-      <a href="#methodologie">Méthodologie</a>
+      <a class="nav-link" href="/#classement">Classement</a>
+
+      <details class="nav-dropdown">
+        <summary class="nav-link">Comprendre <span class="nav-chevron" aria-hidden="true">⌄</span></summary>
+        <div class="nav-dropdown-menu nav-dropdown-menu-compact">
+          <span class="nav-menu-label">Comprendre la richesse</span>
+          <a href="/difference-millionnaire-milliardaire/">
+            <strong>Millionnaire vs milliardaire</strong>
+            <small>La différence expliquée simplement</small>
+          </a>
+          <a href="/#methodologie">
+            <strong>Méthodologie</strong>
+            <small>Comment lire les fortunes du classement</small>
+          </a>
+        </div>
+      </details>
+
+      <details class="nav-dropdown nav-dropdown-wide">
+        <summary class="nav-link">Montants <span class="nav-chevron" aria-hidden="true">⌄</span></summary>
+        <div class="nav-dropdown-menu amounts-menu">
+          <span class="nav-menu-label">Mettre les grandes sommes à l’échelle</span>
+          <div class="amounts-menu-grid">
+            <a href="/1-million-euros/"><span>1 M€</span><small>1 million d’euros</small></a>
+            <a href="/10-millions-euros/"><span>10 M€</span><small>10 millions d’euros</small></a>
+            <a href="/100-millions-euros/"><span>100 M€</span><small>100 millions d’euros</small></a>
+            <a href="/1-milliard-euros/"><span>1 Md€</span><small>1 milliard d’euros</small></a>
+            <a href="/10-milliards-euros/"><span>10 Md€</span><small>10 milliards d’euros</small></a>
+            <a href="/100-milliards-euros/"><span>100 Md€</span><small>100 milliards d’euros</small></a>
+          </div>
+        </div>
+      </details>
     </nav>
-    <a class="header-cta" href="#classement">Voir le classement <span>↓</span></a>
+
+    <a class="header-cta" href="https://ecomstrike.com/" target="_blank" rel="noopener noreferrer">Se lancer dans le business <span>↗</span></a>
+
+    <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">
+      <span></span><span></span>
+    </button>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <nav aria-label="Navigation mobile">
+        <a class="mobile-menu-primary" href="/#classement"><span>Classement</span><b>↗</b></a>
+
+        <div class="mobile-menu-section">
+          <span class="mobile-menu-label">Comprendre</span>
+          <a href="/difference-millionnaire-milliardaire/">Millionnaire vs milliardaire <b>↗</b></a>
+          <a href="/#methodologie">Méthodologie <b>↗</b></a>
+        </div>
+
+        <div class="mobile-menu-section">
+          <span class="mobile-menu-label">Montants</span>
+          <div class="mobile-amount-grid">
+            <a href="/1-million-euros/">1 M€</a>
+            <a href="/10-millions-euros/">10 M€</a>
+            <a href="/100-millions-euros/">100 M€</a>
+            <a href="/1-milliard-euros/">1 Md€</a>
+            <a href="/10-milliards-euros/">10 Md€</a>
+            <a href="/100-milliards-euros/">100 Md€</a>
+          </div>
+        </div>
+
+        <a class="mobile-business-cta" href="https://ecomstrike.com/" target="_blank" rel="noopener noreferrer">Se lancer dans le business <span>↗</span></a>
+      </nav>
+    </div>
   </header>
 
   <main>
