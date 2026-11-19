@@ -7,13 +7,15 @@
   <meta name="robots" content="noindex,follow" />
   <meta name="theme-color" content="#090b0a" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="/style.css" />
-  <script src="/navigation.js" defer></script>
+  <link rel="preload" href="/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/style.css?v=2" />
+  <script src="/navigation.js?v=2" defer></script>
   <style>
-    .not-found{min-height:calc(100vh - 76px);display:grid;place-items:center;text-align:center;padding:70px 24px}
-    .not-found-inner{max-width:680px}.not-found-code{display:block;font:500 clamp(88px,18vw,180px)/.8 Georgia,serif;color:var(--gold-2);letter-spacing:-.08em}
-    .not-found h1{font:500 clamp(36px,6vw,64px)/1 Georgia,serif;letter-spacing:-.045em;margin:28px 0 15px}.not-found p{color:var(--muted);line-height:1.7;margin:0 auto 28px;max-width:560px}
-    @media(max-width:900px){.not-found{min-height:calc(100vh - 64px)}}
+    .not-found{min-height:calc(100vh - 68px);display:grid;place-items:center;text-align:center;padding:70px 24px}
+    .not-found-inner{max-width:680px}.not-found-code{display:block;font:400 clamp(110px,22vw,220px)/.8 var(--serif);background:var(--foil);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.02em}
+    .not-found h1{font:400 clamp(40px,6vw,68px)/1 var(--serif);letter-spacing:-.015em;margin:28px 0 16px}.not-found p{color:var(--paper-2);font-size:17px;line-height:1.65;margin:0 auto 32px;max-width:520px}
+    @media(max-width:900px){.not-found{min-height:calc(100vh - 62px)}}
   </style>
 </head>
 <body>
@@ -34,6 +36,10 @@
           <a href="/difference-millionnaire-milliardaire/">
             <strong>Millionnaire vs milliardaire</strong>
             <small>La différence expliquée simplement</small>
+          </a>
+          <a href="/combien-de-milliardaires-en-france/">
+            <strong>Milliardaires en France</strong>
+            <small>Grandes fortunes françaises</small>
           </a>
           <a href="/#methodologie">
             <strong>Méthodologie</strong>
@@ -71,6 +77,7 @@
         <div class="mobile-menu-section">
           <span class="mobile-menu-label">Comprendre</span>
           <a href="/difference-millionnaire-milliardaire/">Millionnaire vs milliardaire <b>↗</b></a>
+          <a href="/combien-de-milliardaires-en-france/">Milliardaires en France <b>↗</b></a>
           <a href="/#methodologie">Méthodologie <b>↗</b></a>
         </div>
 

@@ -40,3 +40,18 @@ Pour Railway / autre serveur statique : servir simplement le dossier racine.
 - /1-milliard-euros/
 - /10-milliards-euros/
 - /100-milliards-euros/
+
+## Design (refonte du 19 novembre 2026)
+
+- Polices auto-hébergées dans `fonts/` (licence OFL) : Instrument Serif
+  pour les titres et les montants, Geist pour l'interface.
+- Couleurs et tailles : jetons en tête de `style.css` (`--ink`, `--gold`,
+  `--foil`…). `guide.css` ne contient que les composants des guides.
+- Motif guilloché (rosaces de billet de banque) : généré par
+  `navigation.js` derrière la carte du n°1 et les encadrés « réponse » /
+  « montant » des guides. Aucune image à charger.
+- Classement : chaque ligne porte une barre proportionnelle à la fortune
+  du n°1 (`script.js`, `.worth-bar`).
+- Les fichiers CSS et JS sont appelés avec `?v=2`. Après une modification,
+  change ce numéro dans les pages pour que les visiteurs aient la
+  nouvelle version.

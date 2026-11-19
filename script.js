@@ -30,7 +30,7 @@ const INDUSTRY_FR = {
   'metals-mining':'Métaux & mines','real-estate':'Immobilier','service':'Services','sports':'Sport','technology':'Technologie','telecom':'Télécoms'
 };
 
-const state = { all: [], filtered: [], page: 1, perPage: 50, date: '', live: false };
+const state = { all: [], filtered: [], page: 1, perPage: 50, date: '', live: false, max: 1 };
 const $ = (s) => document.querySelector(s);
 const els = {
   rows: $('#rankingRows'), pagination: $('#pagination'), search: $('#searchInput'), country: $('#countryFilter'), industry: $('#industryFilter'), worth: $('#worthFilter'),
@@ -82,6 +82,8 @@ async function loadData(){
     els.dataStatus.className='status warn';
     els.dataStatus.innerHTML='<i></i> Mode secours · Top 20 embarqué';
   }
+  // Fortune la plus élevée : sert d'étalon aux barres du classement
+  state.max = Math.max(1, ...state.all.map(x => x.networth));
   populateFilters();
   updateHero();
   applyFilters();
@@ -140,10 +142,12 @@ function rowHTML(x){
   const chText=change===null?'—':`${change>0?'▲ ':change<0?'▼ ':''}${Math.abs(change).toLocaleString('fr-FR',{maximumFractionDigits:2})}%`;
   const sectors=(x.industry||[]).map(industryName).join(' · ') || 'Secteur non renseigné';
   const source=(x.source||[]).join(' · ') || sectors;
-  return `<article class="rank-row" data-uri="${escapeHTML(x.uri||'')}">
+  const share = Math.min(100, x.networth / state.max * 100);
+  return `<article class="rank-row${Number(x.rank)<=3?' podium':''}" data-uri="${escapeHTML(x.uri||'')}">
     <div class="rank-num">#${escapeHTML(x.rank)}</div>
     <div class="person"><div class="avatar">${escapeHTML(initials(x.name))}</div><div class="person-text"><div class="person-name">${escapeHTML(x.name)}</div><div class="person-sub">${escapeHTML(sectors)}${x.age?` · ${escapeHTML(x.age)} ans`:''}</div></div></div>
     <div class="worth"><strong>${escapeHTML(formatWorth(x.networth))}</strong><small>fortune estimée</small></div>
+    <div class="worth-bar" style="--w:${share.toFixed(2)}%" aria-hidden="true"></div>
     <div class="business">${escapeHTML(source)}</div>
     <div class="country"><span class="flag">${countryFlag(x.citizenship)}</span><span>${escapeHTML(countryName(x.citizenship))}</span></div>
     <div class="change ${chClass}">${chText}</div>
