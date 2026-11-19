@@ -46,7 +46,10 @@ function countryFlag(code){
   if(!code || String(code).length!==2) return '🌍';
   return String(code).toUpperCase().replace(/./g,c=>String.fromCodePoint(127397+c.charCodeAt()));
 }
-function industryName(v){ return INDUSTRY_FR[v] || String(v||'').replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase()); }
+// La source écrit désormais « fashion & retail » là où elle écrivait
+// « fashion-retail » : on ramène les deux formes à la même clé.
+function industryKey(v){ return String(v||'').toLowerCase().trim().replace(/\s*&\s*/g,'-').replace(/\s+/g,'-'); }
+function industryName(v){ return INDUSTRY_FR[industryKey(v)] || String(v||'').replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase()); }
 function billionValue(v){ return Number(v||0)/1000; }
 function formatWorth(v){
   const b=billionValue(v);
@@ -64,13 +67,33 @@ function formatDate(date){
 }
 function escapeHTML(s=''){ return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])); }
 
+// L'adresse « latest » de la source n'est plus mise à jour (figée au
+// 31 août 2026) alors que les listes datées le sont chaque jour. On
+// cherche donc la liste du jour, puis celles des jours précédents, et
+// « latest » seulement en dernier recours.
+async function fetchList(){
+  const valid=(d)=>d && Array.isArray(d.list) && d.list.length;
+  const now=new Date();
+  for(let i=0;i<10;i++){
+    const day=new Date(Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate()-i)).toISOString().slice(0,10);
+    try{
+      const r=await fetch(`${API_BASE}/list/rtb/${day}`);
+      if(r.ok){ const d=await r.json(); if(valid(d)) return d; }
+    }catch{ /* on essaie le jour d'avant */ }
+  }
+  const r=await fetch(`${API_BASE}/list/rtb/latest`,{cache:'no-store'});
+  if(!r.ok) throw new Error('API indisponible');
+  const d=await r.json();
+  if(!valid(d)) throw new Error('Réponse vide');
+  return d;
+}
+
 async function loadData(){
   try{
-    const r=await fetch(`${API_BASE}/list/rtb/latest`,{cache:'no-store'});
-    if(!r.ok) throw new Error('API indisponible');
-    const data=await r.json();
-    if(!data || !Array.isArray(data.list) || !data.list.length) throw new Error('Réponse vide');
-    state.all=data.list.map(x=>({...x,networth:Number(x.networth)||0}));
+    const data=await fetchList();
+    // Quelques lignes de la source passent sous 1 milliard : elles ne
+    // sont plus des milliardaires, on les écarte.
+    state.all=data.list.map(x=>({...x,networth:Number(x.networth)||0})).filter(x=>x.networth>=1000);
     state.date=data.date || '';
     state.live=true;
     els.dataStatus.className='status ok';
@@ -102,7 +125,7 @@ function applyFilters(){
   const industry=els.industry.value;
   const minWorth=Number(els.worth.value)*1000;
   state.filtered=state.all.filter(x=>{
-    const hay=[x.name,...(x.source||[]),...(x.industry||[]),countryName(x.citizenship)].join(' ').toLowerCase();
+    const hay=[x.name,...(x.source||[]),...(x.industry||[]).map(industryName),countryName(x.citizenship)].join(' ').toLowerCase();
     return x.networth>=minWorth && (!q || hay.includes(q)) && (country==='all'||x.citizenship===country) && (industry==='all'||(x.industry||[]).includes(industry));
   }).sort((a,b)=>a.rank-b.rank);
   state.page=1;

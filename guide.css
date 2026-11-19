@@ -212,6 +212,8 @@
 .guide-content p { margin: 0 0 16px; color: var(--paper-2); font-size: 16.5px; line-height: 1.7; }
 .guide-content p strong { color: var(--paper); font-weight: 550; }
 .guide-content em { color: var(--paper); }
+.guide-content p a:not([class]) { color: var(--gold-hi); text-decoration: underline; text-decoration-color: var(--gold-line); text-underline-offset: 3px; }
+.guide-content p a:not([class]):hover { text-decoration-color: var(--gold); }
 
 .guide-content blockquote {
   margin: 24px 0;
@@ -496,6 +498,20 @@
 .comparison-table strong { color: var(--paper); font-weight: 600; }
 .comparison-table .table-gold td { background: var(--gold-wash); color: var(--gold-hi); }
 .comparison-table .table-gold strong { color: var(--gold-hi); }
+.comparison-table.dense th,
+.comparison-table.dense td { padding: 9px 14px; }
+.comparison-table.dense td { font-size: 14.5px; line-height: 1.4; }
+.comparison-table .num { text-align: right; white-space: nowrap; }
+.comparison-table .rank { width: 1%; color: var(--muted); }
+.comparison-table .nw { white-space: nowrap; }
+.comparison-table .show-sm { display: none; }
+@media (max-width: 560px) {
+  .comparison-table.dense table { min-width: 0; }
+  .comparison-table.dense .hide-sm { display: none; }
+  .comparison-table.dense .show-sm { display: block; margin-top: 2px; color: var(--muted); font-size: 12px; font-weight: 400; }
+  .comparison-table.dense th, .comparison-table.dense td { padding: 8px 7px; font-size: 13.5px; }
+  .comparison-table.dense td { overflow-wrap: anywhere; }
+}
 .spend-table table { min-width: 520px; }
 
 /* ---------- Convertisseur ---------- */
@@ -731,6 +747,7 @@
   .number-ladder div { padding: 12px 6px; font-size: 14.5px; }
   .example-head, .example-lines { padding-left: 18px; padding-right: 18px; }
   .comparison-table th, .comparison-table td { padding: 13px 14px; }
+  .comparison-table.dense th, .comparison-table.dense td { padding: 8px 10px; }
   .converter-card { padding: 20px 18px; }
 
   .wealth-nav a { min-height: 46px; font-size: 18px; }
